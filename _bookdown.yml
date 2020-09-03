@@ -1,0 +1,5 @@
+book_filename: "pov_ineq_chart_book"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
