@@ -1,5 +1,21 @@
 book_filename: "pov_ineq_chart_book"
+repo: https://github.com/PovcalNet-Team/pov_ineq_chart_book
+output_dir: "docs"
 delete_merged_file: true
 language:
+  label:
+    fig: "Figure "
+    tab: "Table "
   ui:
+    edit: "Edit"
     chapter_name: "Chapter "
+
+rmd_files: [
+  "index.Rmd",
+  "intro.Rmd",
+  "GIC_of_medians.Rmd",
+
+  "references.Rmd"
+]
+
+# before_chapter_script: "_common.R"
