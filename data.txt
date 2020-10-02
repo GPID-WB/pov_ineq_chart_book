@@ -1,0 +1,6 @@
+- path: df
+  name: df
+  rows: 63960
+  cols: 7
+  description: Deciles of countries by year
+  type: table
