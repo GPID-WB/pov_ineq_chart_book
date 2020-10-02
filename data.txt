@@ -10,3 +10,9 @@
   cols: 5
   description: Deciles of regions by year
   type: table
+- path: dfc
+  name: dfc
+  rows: 63960
+  cols: 7
+  description: Deciles of countries by year
+  type: table
