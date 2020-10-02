@@ -4,3 +4,9 @@
   cols: 7
   description: Deciles of countries by year
   type: table
+- path: dfr
+  name: dfr
+  rows: 125557
+  cols: 5
+  description: Deciles of regions by year
+  type: table
