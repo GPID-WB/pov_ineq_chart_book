@@ -25,13 +25,13 @@ board_register_rsconnect(server = my_server,
                          key    = my_key)
 
 pin(dfc,
-    name = "deciles_by_country",
+    name        = "deciles_by_country",
     description = "Deciles of countries by year",
-    board = "rsconnect")
+    board       = "rsconnect")
 
 
 pin(dfr,
-    name = "deciles_by_region",
+    name        = "deciles_by_region",
     description = "Deciles of regions by year",
-    board = "rsconnect")
+    board       = "rsconnect")
 
