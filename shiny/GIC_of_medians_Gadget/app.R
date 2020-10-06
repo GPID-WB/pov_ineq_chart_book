@@ -24,13 +24,13 @@ qtile <- function(x, nq = 10) {
 #--------- Connect to data ---------
 
 my_key    <- Sys.getenv("connect_key")
-my_server <- "http://w0lxopshyprd1b.worldbank.org:3939/"
+# my_server <- "http://w0lxopshyprd1b.worldbank.org:3939/"
 my_server  <- "http://localhost:3939/"
 
 board_register_rsconnect(server = my_server,
                          key    = my_key)
 
-dfc <- pin_get(name = "deciles_by_country",
+dfc <- pin_get(name = "country_deciles",
                board = "rsconnect")
 
 
