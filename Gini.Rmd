@@ -1,0 +1,46 @@
+# Gini
+`r stringi::stri_rand_lipsum(2)`
+
+
+`r stringi::stri_rand_lipsum(1)`
+
+```{r}
+library(dplyr)
+library(povcalnetR)
+library(crosstalk)
+library(plotly)
+
+df <- povcalnet()
+df <- df %>% 
+  select(countrycode, countryname, year, gini) %>% 
+  mutate(
+    text = paste("Country:\t",   countryname, "\n",
+                 "year:\t\t\t\t", year, "\n",
+                 "Gini:\t\t\t\t", round(gini, digits = 3), "\n")
+  )
+
+sh_df <- SharedData$new(df)
+
+gg <- ggplot(sh_df, 
+             aes(x = year, 
+                 y = gini, 
+                 color = countryname, 
+                 group = countryname)
+) +
+  geom_point(aes(text = text)) +
+  geom_line() +
+  theme_minimal() + 
+  theme(legend.position = "none")
+
+bscols(
+  widths = 12,
+  filter_select(id         = "id", 
+                label      = "Select Country", 
+                sharedData = sh_df, 
+                group      = ~countryname),
+  ggplotly(gg, tooltip = "text") 
+)
+
+```
+
+

@@ -13,6 +13,7 @@ language:
 rmd_files: [
   "index.Rmd",
   "intro.Rmd",
+  "Gini.Rmd",
   "GIC_of_medians.Rmd",
 
   "references.Rmd"
