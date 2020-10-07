@@ -6,17 +6,23 @@
 
 ```{r}
 library(dplyr)
-library(povcalnetR)
 library(crosstalk)
 library(plotly)
+library(pins)
 
-df <- povcalnet()
-df <- df %>% 
+my_key    <- Sys.getenv("connect_key")
+my_server <- "http://w0lxopshyprd1b.worldbank.org:3939/"
+
+board_register_rsconnect(server = my_server,
+                         key    = my_key)
+
+df <- pin_get(name = "pcn",
+              board = "rsconnect") %>% 
   select(countrycode, countryname, year, gini) %>% 
   mutate(
-    text = paste("Country:\t",   countryname, "\n",
-                 "year:\t\t\t\t", year, "\n",
-                 "Gini:\t\t\t\t", round(gini, digits = 3), "\n")
+    text = paste("Country:", countryname, "\n",
+                 "year:",    year, "\n",
+                 "Gini:",    round(gini, digits = 3), "\n")
   )
 
 sh_df <- SharedData$new(df)
@@ -25,13 +31,17 @@ gg <- ggplot(sh_df,
              aes(x = year, 
                  y = gini, 
                  color = countryname, 
-                 group = countryname)
+                 group = countryname,
+                 text = text)
 ) +
-  geom_point(aes(text = text)) +
+  geom_point() +
   geom_line() +
   theme_minimal() + 
   theme(legend.position = "none")
 
+```
+
+```{r dispcode, eval=FALSE}
 bscols(
   widths = 12,
   filter_select(id         = "id", 
@@ -40,7 +50,19 @@ bscols(
                 group      = ~countryname),
   ggplotly(gg, tooltip = "text") 
 )
+```
 
+```{r dispdata, echo=FALSE}
+suppressWarnings(
+  bscols(
+    widths = 12,
+    filter_select(id         = "id", 
+                  label      = "Select Country", 
+                  sharedData = sh_df, 
+                  group      = ~countryname),
+    ggplotly(gg, tooltip = "text") 
+  )
+)
 ```
 
 

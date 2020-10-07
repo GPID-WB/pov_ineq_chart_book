@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Growth Incidense Curves of Medians | Poverty and Inequality Chart Book</title>
+  <title>Chapter 4 Growth Incidense Curves of Medians | Poverty and Inequality Chart Book</title>
   <meta name="description" content="compilation of well-known (and some not so-well-known) measures of poverty and inequality used by the World Bank in different blogs, reports, and papers." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Growth Incidense Curves of Medians | Poverty and Inequality Chart Book" />
+  <meta property="og:title" content="Chapter 4 Growth Incidense Curves of Medians | Poverty and Inequality Chart Book" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Growth Incidense Curves of Medians | Poverty and Inequality Chart Book" />
+  <meta name="twitter:title" content="Chapter 4 Growth Incidense Curves of Medians | Poverty and Inequality Chart Book" />
   
   <meta name="twitter:description" content="compilation of well-known (and some not so-well-known) measures of poverty and inequality used by the World Bank in different blogs, reports, and papers." />
   
@@ -26,17 +26,17 @@
 <meta name="author" content="Daniel Mahler" />
 
 
-<meta name="date" content="2020-10-05" />
+<meta name="date" content="2020-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro.html"/>
+<link rel="prev" href="gini.html"/>
 <link rel="next" href="references.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.4/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -54,6 +54,18 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+<link href="libs/selectize-0.11.2/css/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.11.2/js/selectize.min.js"></script>
+<link href="libs/crosstalk-1.1.0.9000/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.9000/js/crosstalk.min.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -138,7 +150,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> motivation</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="growth-incidense-curves-of-medians.html"><a href="growth-incidense-curves-of-medians.html"><i class="fa fa-check"></i><b>3</b> Growth Incidense Curves of Medians</a></li>
+<li class="chapter" data-level="3" data-path="gini.html"><a href="gini.html"><i class="fa fa-check"></i><b>3</b> Gini</a></li>
+<li class="chapter" data-level="4" data-path="growth-incidense-curves-of-medians.html"><a href="growth-incidense-curves-of-medians.html"><i class="fa fa-check"></i><b>4</b> Growth Incidense Curves of Medians</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -160,11 +173,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="growth-incidense-curves-of-medians" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Growth Incidense Curves of Medians</h1>
-<p>Lorem ipsum dolor sit amet, augue malesuada venenatis sed pharetra sit tortor. Quam in dis est tellus, mus ut a vestibulum. Ut sem donec, leo eu luctus sagittis. Pulvinar primis nisi sit, in ultrices tempus fusce. Diam commodo eget, tempor fusce litora. Quis in et mattis eleifend ante nulla metus. Duis mauris condimentum hac pretium in nulla. Congue in et nullam mus pellentesque massa pharetra vel ut potenti justo. Quisque sem urna sagittis, risus in suspendisse id. Nisl justo arcu sed nec, arcu vitae augue, dis inceptos. Pharetra nam, enim pretium blandit malesuada elementum. In aliquet mollis blandit nec nibh sapien felis potenti mattis. Ac ut pellentesque, ut neque, diam blandit nec., Potenti eu sociosqu aenean in ac! Quis, leo sit et iaculis sollicitudin sed eu. Praesent et cubilia tempus integer feugiat vestibulum, ut sed ut ut. Eu felis eros elit nec in tempus eu gravida massa vitae. Per primis id quam vivamus non. Accumsan taciti egestas sed non bibendum rhoncus vehicula tempor. Posuere maecenas laoreet ut metus eleifend eget ac. Mauris platea class, torquent amet in. Hendrerit neque sed lorem lectus ut in urna.</p>
-<p>Lorem ipsum dolor sit amet, eu dapibus tortor eu consectetur et volutpat nunc. Aliquam varius odio interdum porta vel ad. Eget aliquam erat in vestibulum id. Interdum elit at sed sodales. Eget gravida in nec fermentum, neque et. Conubia curae in urna erat dictum. Iaculis, in vehicula nulla purus, volutpat risus. Rutrum augue, rhoncus eleifend a quisque. A sed leo. Ultrices elementum hendrerit lorem est lorem in! Vehicula vitae, at tempor nam eu dapibus. Hac accumsan praesent pretium ut netus. Augue sem mus sociosqu nisi in gravida, leo id eget sed eros. Eu libero augue nulla.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="growth-incidense-curves-of-medians.html#cb3-1"></a>knitr<span class="op">::</span><span class="kw">include_app</span>(<span class="st">&#39;https://datanalytics.worldbank.org/content/616/&#39;</span>, <span class="dt">height =</span> <span class="st">&#39;600px&#39;</span>)</span></code></pre></div>
+<div id="growth-incidense-curves-of-medians" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Growth Incidense Curves of Medians</h1>
+<p>Lorem ipsum dolor sit amet, ad cum senectus lacinia sodales leo vel duis a. Et odio montes hendrerit vestibulum tempus tincidunt, sem, nulla pulvinar rutrum ac. Malesuada enim sapien tempor volutpat sed amet luctus. Arcu sed praesent lectus nullam egestas ut et. Id placerat at ut auctor mollis leo magnis et! Interdum ipsum sagittis mauris ligula neque aliquam pellentesque felis pharetra vestibulum viverra odio. Odio et consectetur ac diam malesuada in sed platea. Magnis, euismod purus eu amet, quam purus montes conubia quis. In sed ante commodo volutpat. Vestibulum orci. Diam rutrum leo dictumst porta odio, sit maecenas pulvinar leo fames netus. Sit vel congue tempor eros justo justo rhoncus, diam, faucibus malesuada, nascetur ut. Pellentesque ac libero magna vel, sed rhoncus in sed, sociosqu mauris in accumsan ante. Rhoncus nec metus et nec et taciti sit ac metus litora in ultrices sollicitudin. Ligula pellentesque ut velit, nisl tellus varius, aliquet per nostra convallis., Donec velit donec elit ut, sem sed vitae in aptent metus. Fermentum taciti litora nam tempor sed. Ac semper ante facilisis sed at, nisl a, habitasse curae lobortis est, ac. Nisl inceptos in semper pretium metus purus non pellentesque. Nisl laoreet facilisi massa vulputate curae in lacinia vel in. Quisque sed himenaeos ut lacinia tristique volutpat fermentum. Nam nec congue eleifend elementum tincidunt donec, mi nisl urna. Risus erat curae sollicitudin ac magnis sociis ut non odio augue. Hendrerit quis nam tempus etiam commodo urna natoque lacinia. Lacus non tristique dictumst congue aliquam vehicula scelerisque. Himenaeos, malesuada eu quisque, cum. A etiam sed vehicula vulputate, lorem, sed, amet netus quisque. Et, tortor turpis purus porta elementum commodo, velit tristique, lectus taciti. Etiam condimentum ante sit viverra sit dignissim varius imperdiet. In, sagittis volutpat ac faucibus conubia arcu quam non in massa. Ullamcorper sem nec dolor nunc auctor facilisis. Praesent hac duis, et ridiculus dapibus eleifend cras ante ante. Ipsum, sociis velit fames maximus porta.</p>
+<p>Lorem ipsum dolor sit amet, a, nascetur, nulla faucibus a habitasse. Elementum sociis ultrices, sit condimentum morbi in ridiculus mi eros praesent. Consequat tortor, massa dictumst scelerisque eu ultrices curabitur augue. Quis turpis ut in molestie habitant eu ultrices. Vel diam, efficitur sem et egestas convallis potenti dolor nunc, magna eleifend facilisis. Nostra aliquet hac nam. Nisl ut ac sed sapien eu, mi enim. Non tempus lectus, lorem duis. Ex id cras fermentum orci lobortis pretium. Adipiscing eleifend a ullamcorper netus. Montes, vel potenti. In volutpat ullamcorper senectus tincidunt sed imperdiet in nec. Iaculis non, nascetur ac in habitant.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="growth-incidense-curves-of-medians.html#cb5-1"></a>knitr<span class="op">::</span><span class="kw">include_app</span>(<span class="st">&#39;https://datanalytics.worldbank.org/content/616/&#39;</span>, <span class="dt">height =</span> <span class="st">&#39;600px&#39;</span>)</span></code></pre></div>
 <iframe src="https://datanalytics.worldbank.org/content/616/?showcase=0" width="672" height="600px">
 </iframe>
 
@@ -174,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gini.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

@@ -7,5 +7,5 @@ browseURL("docs/index.html")
 
 
 
-# file <- c("ESG_coverage.Rmd")
-# bookdown::render_book(file, preview = TRUE)
+file <- c("Gini.Rmd")
+bookdown::render_book(file, preview = TRUE)
